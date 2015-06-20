@@ -1,0 +1,12 @@
+<aspectj>
+<aspects>
+<aspect name="com.ebank.Timer_Roo_ToString"/>
+<aspect name="com.ebank.Timer_Roo_JavaBean"/>
+<aspect name="com.ebank.Timer_Roo_Configurable"/>
+<aspect name="com.ebank.Timer_Roo_Jpa_Entity"/>
+<aspect name="com.ebank.Timer_Roo_Jpa_ActiveRecord"/>
+<aspect name="com.ebank.web.ApplicationConversionServiceFactoryBean_Roo_ConversionService"/>
+<aspect name="com.ebank.web.TimerController_Roo_Controller"/>
+</aspects>
+</aspectj>
+

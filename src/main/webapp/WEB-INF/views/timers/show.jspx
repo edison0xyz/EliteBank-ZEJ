@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_com_ebank_Timer" object="${timer}" path="/timers" z="AW0AR3ZEOqN4RtL/jJv1mm/p2mM=">
+        <field:display field="message" id="s_com_ebank_Timer_message" object="${timer}" z="qZgQeaUGgK9gMf5mwdiPqRMPs+I="/>
+    </page:show>
+</div>
