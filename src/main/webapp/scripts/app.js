@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('eletrial', [ 'ngRoute', 'ngResource' ]).config(
+angular.module('eletrial', [ 'ngRoute', 'ngResource', 'ui.bootstrap']).config(
 		[ '$routeProvider', function($routeProvider) {
 			$routeProvider.when('/', {
 				templateUrl : 'views/landing.html',
