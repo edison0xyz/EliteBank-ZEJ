@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-md-12">
             <h2>Portfolio Summary</h2>
 
             <div class="panel panel-default">
@@ -38,8 +38,81 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-12">
-            <h2>Research Summary</h2>
+        <div class="col-md-12">
+            <h2>Research Overview</h2>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h4>How To Invest Your $200,000,000 Portfolio</h4>
+
+                                    <h5> Tan Jia Jing
+                                        <small>Elite analyst</small>
+                                    </h5>
+
+                                    <p>The average asset allocation of this select group looks like the pie
+                                        chart nearby.Just
+                                        eyeballing the data, my guess is that they have higher allocations to hedge
+                                        funds (18%)
+                                        and
+                                        private equity (10%) than you do. You probably have close to a zero allocation
+                                        to
+                                        venture
+                                        capital rather than their 2%, and a zero investment in “Direct Investments in
+                                        Private
+                                        Companies.” I’m not sure what that 1% investment in “Other” is.</p>
+                                </div>
+                                <div class="col-md-4"><img class="img-responsive" src="img/super-rich.jpg" alt=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <h3 style="text-align: center;">Market Overview</h3>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h3 style="text-align: center;">Top players</h3>
+                                </div>
+                                <div class="col-sm-4">
+                                    <h3 style="text-align: center;">Elite Insights</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-3" ng-controller="FeedCtrl">
+            <h3>
+                Top news
+                <button type="button" class="btn btn-default btn-xs" aria-label="Refresh" ng-click="loadFeed()">
+                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                </button>
+
+            </h3>
+            <div class="row-fluid">
+                <ul class="list-unstyled">
+                    <span class="badge badge-warning" ng-show="feeds.length > 0">{{(feeds | filter:filterText).length}} Items</span>
+                    <li ng-repeat="feed in feeds | filter:filterText">
+                        <h5><a href="{{feed.link}}">{{feed.title}}</a></h5>
+
+                        <p class="text-left">{{feed.contentSnippet}}</p>
+                        <span class="small">{{feed.publishedDate}}</span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

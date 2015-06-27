@@ -23,7 +23,13 @@
     your browser</a> to improve your experience.</p>
 <![endif]-->
 <div class="wrapper">
-<div class='full-page' ng-view></div>
+    <div class='full-page' ng-view></div>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            <b>Version</b> 2.0
+        </div>
+        <strong>Copyright &copy; 2015 <a href="#">Elite Bank</a>.</strong> All rights reserved.
+    </footer>
 </div>
 
 <script src="scripts/vendor/modernizr-2.8.3.min.js"></script>
@@ -48,11 +54,14 @@
 <script src="scripts/services/locationParser.js"></script>
 <script src="scripts/services/CustomerFactory.js"></script>
 <script src="scripts/services/UserResource.js"></script>
+<script src="scripts/services/FeedService.js"></script>
 <script src="scripts/controllers/newCustomerController.js"></script>
 <script src="scripts/controllers/searchCustomerController.js"></script>
 <script src="scripts/controllers/editCustomerController.js"></script>
 <script src="scripts/controllers/loginController.js"></script>
 <script src="scripts/controllers/dashboardController.js"></script>
+<script src="scripts/controllers/statementsController.js"></script>
+<script src="scripts/controllers/feedController.js"></script>
 <script src="views/navbar/navbar.controller.js"></script>
 <script src="scripts/services/PortfolioFactory.js"></script>
 <script src="scripts/controllers/newPortfolioController.js"></script>

@@ -35,12 +35,21 @@ angular.module('eletrial', ['ngRoute', 'ngResource', 'ui.bootstrap', 'chart.js']
         }).when('/mail', {
             templateUrl: 'views/mailbox/mailbox.html',
             controller: 'MailboxController'
+        }).when('/mail/new', {
+            templateUrl: 'views/mailbox/compose.html',
+            controller: 'MailboxController'
+        }).when('/mail/read', {
+            templateUrl: 'views/mailbox/read-mail.html',
+            controller: 'MailboxController'
+        }).when('/statements', {
+            templateUrl: 'views/statements/statements.html',
+            controller: 'StatementsController'
         })
         .otherwise({
             redirectTo: '/'
         });
     }]).controller('MailboxController',
-    function MailboxController() {
+    function() {
     }).controller('NavController',
     function NavController($scope, $location) {
         $scope.matchesRoute = function (route) {

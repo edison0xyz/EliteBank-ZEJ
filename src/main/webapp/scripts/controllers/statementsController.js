@@ -1,9 +1,9 @@
 
 
-angular.module('eletrial').controller('DashboardController', function($scope , PortfolioResource) {
+angular.module('eletrial').controller('StatementsController', function($scope ) {
     $scope.date = new Date();
 
-    $scope.portfolios = [
+    $scope.statements = [
         {
             title: 'P19023F',
             labels: ["Real Estate", "Direct Investments", "Equities", "Bonds", "Commodities"],
