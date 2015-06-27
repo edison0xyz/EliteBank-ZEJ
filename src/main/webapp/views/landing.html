@@ -35,7 +35,7 @@
                             <table class="table table-responsive">
                                 <tr ng-repeat="invest in investments">
                                     <td>{{ invest[0] }}</td>
-                                    <td ng-if="view=='Value'">{{ invest[1] | currency: "USD$" }}</td>
+                                    <td ng-if="view=='Value'">{{ invest[1] | currency: currency+' ' }}</td>
                                     <td ng-if="view=='Percent'">{{ invest[1] | percentage: 2 }}</td>
                                 </tr>
                             </table>

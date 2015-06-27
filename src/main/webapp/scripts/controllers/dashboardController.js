@@ -11,7 +11,6 @@ angular.module('eletrial').controller('DashboardController', function ($scope, C
         if(cur != 'SGD'){
             $scope.currency = cur;
             CurrencyService.convertCurrency('SGD',$scope.currency,1).then(function(res){
-                console.log(res);
                 $scope.rate= res.data[$scope.currency];
                 update_view();
             });
