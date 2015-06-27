@@ -21,8 +21,7 @@ body {
   background: #d2d6de; }
 
 .full-page {
-  height: 100%;
-  overflow: auto; }
+  height: 100%; }
 
 /* Set the fixed height of the footer here */
 #footer {
