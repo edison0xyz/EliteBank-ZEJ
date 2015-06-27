@@ -1,19 +1,18 @@
 'use strict';
 
 angular.module('eletrial')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
+  .controller('NavbarCtrl', function ($scope, $location, $rootScope, UserResource) {
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
     }];
 
     $scope.isCollapsed = true;
-    $scope.isLoggedIn = Auth.isLoggedIn;
-    $scope.isAdmin = Auth.isAdmin;
-    $scope.getCurrentUser = Auth.getCurrentUser;
+    $scope.isLoggedIn = $rootScope.isLoggedIn;
+    $scope.currentUser = $rootScope.currentUser;
 
     $scope.logout = function() {
-      Auth.logout();
+      UserResource.logout();
       $location.path('/login');
     };
 

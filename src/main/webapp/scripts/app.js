@@ -48,7 +48,7 @@ angular.module('eletrial', [ 'ngRoute', 'ngResource' ]).config(
 		}).run(function ($rootScope, $location) {
 		    // Redirect to login if route requires auth and you're not logged in
 		    $rootScope.$on('$routeChangeStart', function (event, next) {
-		    	if (!$rootScope.isLoggedIn) {
+		    	if ($location.path() !== '/secure' &&!$rootScope.isLoggedIn) {
 		            $location.path('/login');
 		    	}
 		    });
