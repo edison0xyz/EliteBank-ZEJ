@@ -1,0 +1,29 @@
+<div class="full-page login-page">
+	<div class="login-box">
+		<div class="login-logo">
+			<a href="/"><b>Elite</b>Bank</a>
+		</div>
+		<!-- /.login-logo -->
+		<div class="login-box-body">
+			<p class="login-box-msg">You are in a secured site.</p>
+			<form name='codeForm' ng-submit='codeForm.$valid && code(pincode)'>
+				<div class='row'>
+					<div class="form-group has-feedback">
+						<input type="text" ng-model='pincode' class="form-control"
+							placeholder="Enter your secure pin code" /> <span
+							class="glyphicon glyphicon-envelope form-control-feedback"></span>
+					</div>
+				</div>
+				<div class='row'>
+					<div class="col-xs-8 col-xs-offset-2">
+						<button type="submit" class="btn btn-primary btn-block btn-flat">Sign
+							In</button>
+					</div>
+				</div>
+			</form>
+
+		</div>
+		<!-- /.login-box-body -->
+	</div>
+	<!-- /.login-box -->
+</div>

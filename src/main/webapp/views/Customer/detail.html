@@ -1,0 +1,34 @@
+<header ng-switch on="$location.path().indexOf('/Customers/new') > -1">
+    <h3 ng-switch-when="true">Create a new Customer</h3>
+    <h3 ng-switch-when="false">View or edit Customer</h3>
+</header>
+<form id="CustomerForm" name="CustomerForm" class="form-horizontal" role="form">
+    <div ng-show="displayError" class="alert alert-danger">
+        <strong>Error!</strong> Something broke. Retry, or cancel and start afresh.
+    </div>
+    
+
+    <div class="form-group" ng-class="{'has-error': CustomerForm.address.$invalid}">
+        <label for="address" class="col-sm-2 control-label">Address</label>
+        <div id="addressControls" class="col-sm-10">
+            <input id="address" name="address" type="text"class="form-control" ng-model="customer.address" placeholder="Enter the Customer Address"></input>
+        </div>
+    </div>
+
+    <div class="form-group" ng-class="{'has-error': CustomerForm.fullName.$invalid}">
+        <label for="fullName" class="col-sm-2 control-label">Full Name</label>
+        <div id="fullNameControls" class="col-sm-10">
+            <input id="fullName" name="fullName" type="text" requiredclass="form-control" ng-model="customer.fullName" placeholder="Enter the Customer Full Name"></input>
+            <span class="help-block error" ng-show="CustomerForm.fullName.$error.required">required</span> 
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button id="saveCustomer" name="saveCustomer" class="btn btn-primary" ng-disabled="isClean() || CustomerForm.$invalid" ng-click="save()"><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+            <button id="cancel" name="cancel" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove-sign"></span> Cancel</button>
+            <button id="deleteCustomer" name="deleteCustomer" class="btn btn-danger" ng-show="customer.id" ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+        </div>
+    </div>
+</form>
