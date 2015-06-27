@@ -4,7 +4,37 @@
     <div class="row">
         <div class="col-lg-12">
             <h2>Portfolio Summary</h2>
-            <div id="pchart"></div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="input-group">
+                                <select name="type" ng-model="portfolio"
+                                        ng-change="update()"
+                                        ng-options="port as port.title for port in portfolios">
+
+                                </select>
+                                as of {{ date | date:'EEE, dd MMM YY HH:mm:ss Z'}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <canvas id="base" class="chart-base" chart-type="type" data="data"
+                                    labels="labels" legend="true"></canvas>
+                        </div>
+                        <div class="col-md-4">
+                            <table>
+                                <tr ng-repeat="inv in investments">
+                                    <td>{{ inv.title }}</td>
+                                    <td>${{ inv.price }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">

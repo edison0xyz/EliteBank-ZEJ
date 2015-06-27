@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('eletrial', ['ngRoute', 'ngResource', 'ui.bootstrap']).config(
+angular.module('eletrial', ['ngRoute', 'ngResource', 'ui.bootstrap', 'chart.js']).config(
     ['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/', {
             templateUrl: 'views/landing.html',
-            controller: 'LandingPageController'
+            controller: 'DashboardController'
         }).when('/Customers', {
             templateUrl: 'views/Customer/search.html',
             controller: 'SearchCustomerController'
@@ -33,15 +33,13 @@ angular.module('eletrial', ['ngRoute', 'ngResource', 'ui.bootstrap']).config(
             templateUrl: 'views/Dashboard/dashboard.html',
             controller: 'DashboardController'
         }).when('/mail', {
-            templateUrl: 'views/mailbox/compose.html',
+            templateUrl: 'views/mailbox/mailbox.html',
             controller: 'MailboxController'
         })
         .otherwise({
             redirectTo: '/'
         });
-    }]).controller('LandingPageController',
-    function LandingPageController() {
-    }).controller('MailboxController',
+    }]).controller('MailboxController',
     function MailboxController() {
     }).controller('NavController',
     function NavController($scope, $location) {
