@@ -3,8 +3,6 @@
 angular.module('eletrial').controller('DashboardController', function($scope ) {
     $scope.date = new Date();
 
-    $scope.investments = _.map(portfolios, function(){});
-
     $scope.portfolios = [
         {
             title: 'P19023F',
@@ -25,5 +23,6 @@ angular.module('eletrial').controller('DashboardController', function($scope ) {
         $scope.labels = $scope.portfolio.labels;
         $scope.type = $scope.portfolio.type;
     }
+    $scope.investments = _.zip($scope.portfolio.labels, $scope.portfolio.data);
     $scope.update();
 });

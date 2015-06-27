@@ -26,9 +26,9 @@
                         </div>
                         <div class="col-md-4">
                             <table>
-                                <tr ng-repeat="inv in investments">
-                                    <td>{{ inv.title }}</td>
-                                    <td>${{ inv.price }}</td>
+                                <tr ng-repeat="invest in investments">
+                                    <td>{{ invest[0] }}</td>
+                                    <td>{{ invest[1] }}</td>
                                 </tr>
                             </table>
                         </div>
