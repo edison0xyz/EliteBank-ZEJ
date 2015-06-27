@@ -1,7 +1,6 @@
 
 
 angular.module('eletrial').controller('StatementsController', function($scope ) {
-    $scope.date = new Date();
 
     $scope.statements = [
         {
@@ -17,12 +16,4 @@ angular.module('eletrial').controller('StatementsController', function($scope ) 
             type: 'Pie'
         }
     ];
-    $scope.portfolio = $scope.portfolios[0];
-    $scope.update = function () {
-        $scope.data = $scope.portfolio.data;
-        $scope.labels = $scope.portfolio.labels;
-        $scope.type = $scope.portfolio.type;
-    }
-    $scope.investments = _.zip($scope.portfolio.labels, $scope.portfolio.data);
-    $scope.update();
 });
