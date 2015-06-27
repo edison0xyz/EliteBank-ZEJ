@@ -3,11 +3,7 @@
 angular.module('eletrial').controller('DashboardController', function($scope ) {
     $scope.date = new Date();
 
-    $scope.investments = [
-        { title: 'Dow Jones Industrial Average (^DJI)', price: '17,946.68' },
-        { title: 'S&P 500 (^GSPC)', price: "2,101.49" },
-        { title: 'NASDAQ Composite (^IXIC)', price: '5,080.51' }
-    ];
+    $scope.investments = _.map(portfolios, function(){});
 
     $scope.portfolios = [
         {
