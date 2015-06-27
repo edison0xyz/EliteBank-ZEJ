@@ -1,9 +1,0 @@
-<aspectj>
-<aspects>
-<aspect name="com.ebank.TimerIntegrationTest_Roo_IntegrationTest"/>
-<aspect name="com.ebank.TimerDataOnDemand_Roo_Configurable"/>
-<aspect name="com.ebank.TimerIntegrationTest_Roo_Configurable"/>
-<aspect name="com.ebank.TimerDataOnDemand_Roo_DataOnDemand"/>
-</aspects>
-</aspectj>
-
