@@ -22,3 +22,7 @@ Technology
 * JAX-RS Webservice endpoints
 * AngularJS Thick Client
 
+Instructions:
+* git clone repository
+* Import maven project with existing source into Eclipse
+* 
