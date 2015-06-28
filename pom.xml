@@ -97,7 +97,7 @@
        <artifactId>maven-war-plugin</artifactId>
        <version>2.4</version>
        <configuration>
-         <outputDirectory>YOUR WAR DESTINATION</outputDirectory>
+         <outputDirectory>webapps</outputDirectory>
          <warName>ROOT</warName>
        </configuration>
      </plugin>
