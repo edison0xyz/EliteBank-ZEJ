@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Version;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.ArrayList;
 @Entity
 @XmlRootElement
 public class Portfolio implements Serializable {
@@ -19,6 +20,9 @@ public class Portfolio implements Serializable {
 	@Version
 	@Column(name = "version")
 	private int version;
+
+	@Column
+	private ArrayList investments;
 
 	public Long getId() {
 		return this.id;
@@ -34,14 +38,6 @@ public class Portfolio implements Serializable {
 
 	public void setVersion(final int version) {
 		this.version = version;
-	}
-
-	@Override
-	public String toString() {
-		String result = getClass().getSimpleName() + " ";
-		if (id != null)
-			result += "id: " + id;
-		return result;
 	}
 
 	@Override
@@ -67,5 +63,13 @@ public class Portfolio implements Serializable {
 		int result = 1;
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
+	}
+
+	public ArrayList getInvestments() {
+		return investments;
+	}
+
+	public void setInvestments(ArrayList investments) {
+		this.investments = investments;
 	}
 }

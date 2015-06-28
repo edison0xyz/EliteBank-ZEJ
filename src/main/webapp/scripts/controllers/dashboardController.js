@@ -49,24 +49,16 @@ angular.module('eletrial').controller('DashboardController', function ($scope, C
         update_view();
     }
 
-    $scope.view = 'Percent';
-    $scope.toggle_view = function () {
-        $scope.view = $scope.view == 'Value' ? 'Percent' : 'Value';
-        $scope.investments = $scope.view == 'Percent' ? investment_percent : investment_value;
-    }
-
     var update_view = function () {
         var total = _.sum($scope.data);
-        investment_percent = _.zip($scope.portfolio.labels, $scope.portfolio.data);
-        investment_percent = _.map(investment_percent, function (inv) {
-            inv[1] = inv[1] / total * 100;
+        investment_percent = _.map($scope.portfolio.data, function (inv) {
+            inv = inv / total;
             return inv;
         });
         var foreign_price = _.map($scope.price, function(price){
             return $scope.rate*price;
         })
-        investment_value = _.zip($scope.portfolio.labels, foreign_price);
-        $scope.investments = $scope.view == 'Percent' ? investment_percent : investment_value;
+        $scope.investments = _.zip($scope.portfolio.labels, foreign_price, investment_percent);
     }
 
     $scope.updatePortfolio();

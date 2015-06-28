@@ -8,22 +8,14 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-12">
                             <div class="input-group">
                                 <select ng-model="portfolio"
                                         ng-change="updatePortfolio()"
                                         ng-options="port as port.title for port in portfolios">
-
                                 </select>
                                 as of {{ date | date:'EEE, dd MMM YY HH:mm:ss Z'}}
                             </div>
-                        </div>
-                        <div class="col-sm-4">
-                            <button type="button" class="btn btn-default btn-sm" ng-click="toggle_view()">Showing {{view}}</button>
-                            <select  ng-if="view=='Value'" ng-model="currency"
-                                     ng-change="changeCurrency(currency)"
-                                     ng-options="cur for cur in currencies">
-                            </select>
                         </div>
                     </div>
                     <div class="row">
@@ -32,13 +24,29 @@
                                     labels="labels" legend="true"></canvas>
                         </div>
                         <div class="col-md-4">
-                            <table class="table table-responsive">
-                                <tr ng-repeat="invest in investments">
-                                    <td>{{ invest[0] }}</td>
-                                    <td ng-if="view=='Value'">{{ invest[1] | currency: currency+' ' }}</td>
-                                    <td ng-if="view=='Percent'">{{ invest[1] | percentage: 2 }}</td>
-                                </tr>
-                            </table>
+                            <select ng-model="currency"
+                                    ng-change="changeCurrency(currency)"
+                                    ng-options="cur for cur in currencies"
+                                    class="pull-right">
+                            </select>
+                            <tabset>
+                                <tab heading="Distribution">
+                                    <table class="table table-responsive">
+                                        <tr ng-repeat="invest in investments">
+                                            <td>{{ invest[0] }}</td>
+                                            <td>{{ invest[2] | percentage: 2 }}</td>
+                                        </tr>
+                                    </table>
+                                </tab>
+                                <tab heading="Value">
+                                    <table class="table table-responsive">
+                                        <tr ng-repeat="invest in investments">
+                                            <td>{{ invest[0] }}</td>
+                                            <td>{{ invest[1] | currency: currency+' ' }}</td>
+                                        </tr>
+                                    </table>
+                                </tab>
+                            </tabset>
                         </div>
                     </div>
                 </div>

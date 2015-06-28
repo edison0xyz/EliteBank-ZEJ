@@ -44,19 +44,15 @@ angular.module('eletrial', ['ngRoute', 'ngResource', 'ui.bootstrap', 'chart.js']
         }).when('/statements', {
             templateUrl: 'views/statements/statements.html',
             controller: 'StatementsController'
+        }).when('/research', {
+            templateUrl: 'views/Research/research.html',
+            controller: 'ResearchController'
         })
         .otherwise({
             redirectTo: '/'
         });
-    }]).controller('MailboxController',
-    function() {
-    }).controller('NavController',
-    function NavController($scope, $location) {
-        $scope.matchesRoute = function (route) {
-            var path = $location.path();
-            return (path === ("/" + route) || path.indexOf("/" + route
-                + "/") == 0);
-        };
+    }]).controller('MailboxController', function() {
+    }).controller('ResearchController', function() {
     }).run(function ($rootScope, $location) {
         // Redirect to login if route requires auth and you're not logged in
         $rootScope.$on('$routeChangeStart', function (event, next) {
