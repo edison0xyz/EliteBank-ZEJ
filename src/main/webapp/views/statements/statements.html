@@ -9,10 +9,12 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="row">
-                        <form name="generateStatement" ng-submit="generateStatement.$valid && genStatement(start_date, end_date)">
+                        <form name="generateStatement"
+                              ng-submit="generateStatement.$valid && genStatement(start_date, end_date)">
 
                             <div class="col-lg-6">
                                 <h4>Generate a custom statement</h4>
+
                                 <p class="input-group">
                                     <input type="text" class="form-control" datepicker-popup="dd.MM.yyyy"
                                            ng-model="start_date"

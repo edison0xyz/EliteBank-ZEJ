@@ -22,10 +22,13 @@ public class Portfolio implements Serializable {
 	private int version;
 
 	@Column
-	private ArrayList investments;
+	private float netValue;
 
 	@Column
-	private float netValue;
+	private String portfolioID;
+
+	@Column
+	private String managingAgent;
 
 	public Long getId() {
 		return this.id;
@@ -68,14 +71,6 @@ public class Portfolio implements Serializable {
 		return result;
 	}
 
-	public ArrayList getInvestments() {
-		return investments;
-	}
-
-	public void setInvestments(ArrayList investments) {
-		this.investments = investments;
-	}
-
 	public float getNetValue() {
 		return netValue;
 	}
@@ -84,10 +79,30 @@ public class Portfolio implements Serializable {
 		this.netValue = netValue;
 	}
 
+	public String getPortfolioID() {
+		return portfolioID;
+	}
+
+	public void setPortfolioID(String portfolioID) {
+		this.portfolioID = portfolioID;
+	}
+
+	public String getManagingAgent() {
+		return managingAgent;
+	}
+
+	public void setManagingAgent(String managingAgent) {
+		this.managingAgent = managingAgent;
+	}
+
 	@Override
 	public String toString() {
 		String result = getClass().getSimpleName() + " ";
 		result += "netValue: " + netValue;
+		if (portfolioID != null && !portfolioID.trim().isEmpty())
+			result += ", portfolioID: " + portfolioID;
+		if (managingAgent != null && !managingAgent.trim().isEmpty())
+			result += ", managingAgent: " + managingAgent;
 		return result;
 	}
 }

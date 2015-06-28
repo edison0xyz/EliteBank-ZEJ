@@ -1,9 +1,46 @@
 <div ng-include="'views/navbar/navbar.html'"></div>
+
 <div class="container">
+    <header ng-switch on="$location.path().indexOf('/Portfolios/new') > -1">
+        <h3 ng-switch-when="true">Create a new Portfolio</h3>
+
+        <h3 ng-switch-when="false">View or edit Portfolio</h3>
+    </header>
     <form id="PortfolioForm" name="PortfolioForm" class="form-horizontal" role="form">
         <div ng-show="displayError" class="alert alert-danger">
             <strong>Error!</strong> Something broke. Retry, or cancel and start afresh.
         </div>
+
+
+        <div class="form-group" ng-class="{'has-error': PortfolioForm.netValue.$invalid}">
+            <label for="netValue" class="col-sm-2 control-label">Net Value</label>
+
+            <div id="netValueControls" class="col-sm-10">
+                <input id="netValue" name="netValue" type="number" class="form-control" ng-model="portfolio.netValue"
+                       placeholder="Enter the Portfolio Net Value"></input>
+                <span class="help-block error" ng-show="PortfolioForm.netValue.$error.number">not a number</span>
+            </div>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': PortfolioForm.portfolioID.$invalid}">
+            <label for="portfolioID" class="col-sm-2 control-label">Portfolio ID</label>
+
+            <div id="portfolioIDControls" class="col-sm-10">
+                <input id="portfolioID" name="portfolioID" type="text" class="form-control"
+                       ng-model="portfolio.portfolioID" placeholder="Enter the Portfolio Portfolio ID"></input>
+            </div>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error': PortfolioForm.managingAgent.$invalid}">
+            <label for="managingAgent" class="col-sm-2 control-label">Managing Agent</label>
+
+            <div id="managingAgentControls" class="col-sm-10">
+                <input id="managingAgent" name="managingAgent" type="text" class="form-control"
+                       ng-model="portfolio.managingAgent" placeholder="Enter the Portfolio Managing Agent"></input>
+            </div>
+        </div>
+
+
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button id="savePortfolio" name="savePortfolio" class="btn btn-primary"
