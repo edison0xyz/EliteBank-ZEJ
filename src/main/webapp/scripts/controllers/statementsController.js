@@ -29,12 +29,13 @@ angular.module('eletrial').controller('StatementsController', function($scope, $
 
     $scope.genLink = null;
     $scope.genStatement = function(start,end){
-        $scope.genText = 'Generating statement from ' + toLocal(start) + 'to' + toLocal(end) + '.'
+        $scope.genText = 'Generating statement from ' + toLocal(start) + ' to ' + toLocal(end) + '.';
         $interval(function(){
             $scope.genText += '.';
         }, 1000, 4);
 
         $timeout(function(){
+            $scope.genText = "Your custom report is ready:";
             $scope.genLink = "generated/JIMMY SOH - SIN1798X - GENERATED 1_JUL_2015_1501H Sheet1.pdf";
         }, 4500);
 
