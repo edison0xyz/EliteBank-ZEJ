@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('eletrial', ['ngRoute', 'ngResource', 'ui.bootstrap', 'chart.js']).config(
+angular.module('eletrial', ['ngRoute', 'ngResource', 'ui.bootstrap', 'chart.js', 'highcharts-ng']).config(
     ['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/', {
             templateUrl: 'views/landing.html',
@@ -52,7 +52,6 @@ angular.module('eletrial', ['ngRoute', 'ngResource', 'ui.bootstrap', 'chart.js']
             redirectTo: '/'
         });
     }]).controller('MailboxController', function() {
-    }).controller('ResearchController', function() {
     }).run(function ($rootScope, $location) {
         // Redirect to login if route requires auth and you're not logged in
         $rootScope.$on('$routeChangeStart', function (event, next) {
@@ -61,4 +60,4 @@ angular.module('eletrial', ['ngRoute', 'ngResource', 'ui.bootstrap', 'chart.js']
             }
         });
     });
-		    
+

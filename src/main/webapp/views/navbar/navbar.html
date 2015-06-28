@@ -2,15 +2,15 @@
     <nav class="navbar navbar-static-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="" class="navbar-brand"><b>EliteBank</b></a>
+                <a href="#/" class="navbar-brand"><b>EliteBank</b></a>
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                        data-target="#navbar-collapse">
+                        data-target="#navbar-collapse" ng-click="isCollapsed = !isCollapsed">
                     <i class="fa fa-bars"></i>
                 </button>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+            <div  class="collapse navbar-collapse pull-left" collapse="isCollapsed" id="navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active">
                         <a href="#/">Summary <span class="sr-only">(current)</span></a></li>

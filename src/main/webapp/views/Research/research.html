@@ -10,16 +10,25 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <div id="custom-search-input">
-                                <div class="input-group col-md-12">
-                                    <input type="text" class="  search-query form-control" placeholder="Search" />
-                                <span class="input-group-btn">
-                                    <button class="btn btn-danger" type="button">
-                                        <span class=" glyphicon glyphicon-search"></span>
-                                    </button>
-                                </span>
+                            <form ng-submit="chart(symbol)">
+                                <div id="custom-search-input">
+                                    <div class="input-group col-sm-8 col-sm-offset-2">
+                                        <input ng-model="symbol" type="text" class="search-query form-control"
+                                               placeholder="Search Quotes"/>
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-primary" type="submit">
+                                                    <span class=" glyphicon glyphicon-search"></span>
+                                                </button>
+                                            </span>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <h3 ng-if="title">{{title}}</h3>
+                            <highchart id="chart1" config="chartConfig" class="span10"></highchart>
                         </div>
                     </div>
                 </div>
