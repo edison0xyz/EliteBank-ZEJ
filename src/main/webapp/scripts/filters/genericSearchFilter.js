@@ -26,12 +26,12 @@ angular.module('eletrial').filter('searchFilter', function() {
         return flag;
     }
 
-    return function(results) {
+    return function(results, scope) {
 
-        this.filteredResults = [];
+        scope.filteredResults = [];
         for (var ctr = 0; ctr < results.length; ctr++) {
             var flag = true;
-            var searchCriteria = this.search;
+            var searchCriteria = scope.search;
             var result = results[ctr];
             for (var key in searchCriteria) {
                 if (searchCriteria.hasOwnProperty(key)) {
@@ -50,10 +50,10 @@ angular.module('eletrial').filter('searchFilter', function() {
                 }
             }
             if (flag == true) {
-                this.filteredResults.push(result);
+                scope.filteredResults.push(result);
             }
         }
-        this.numberOfPages();
-        return this.filteredResults;
+        scope.numberOfPages();
+        return scope.filteredResults;
     };
 });

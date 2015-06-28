@@ -65,7 +65,7 @@
                 </tr>
                 </thead>
                 <tbody id="search-results-body">
-                <tr ng-repeat="result in searchResults | searchFilter:searchResults | startFrom:currentPage*pageSize | limitTo:pageSize">
+                <tr ng-repeat="result in searchResults | searchFilter: this | startFrom:currentPage*pageSize | limitTo:pageSize">
                     <td><a href="#/Portfolios/edit/{{result.id}}">{{result.netValue}}</a></td>
                     <td><a href="#/Portfolios/edit/{{result.id}}">{{result.portfolioID}}</a></td>
                     <td><a href="#/Portfolios/edit/{{result.id}}">{{result.managingAgent}}</a></td>
