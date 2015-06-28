@@ -44,7 +44,7 @@ angular.module('eletrial', ['ngRoute', 'ngResource', 'ui.bootstrap', 'chart.js',
         }).when('/statements', {
             templateUrl: 'views/statements/statements.html',
             controller: 'StatementsController'
-        }).when('/qoutes', {
+        }).when('/quotes', {
             templateUrl: 'views/Research/research.html',
             controller: 'ResearchController'
         })
