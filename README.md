@@ -25,4 +25,6 @@ Technology
 Instructions:
 * git clone repository
 * Import maven project with existing source into Eclipse
-* 
+* Install Jboss tools from Eclipse marketplace
+* Configure Wildfly server runtime
+* Run project on server
