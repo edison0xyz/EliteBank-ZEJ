@@ -9,9 +9,37 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-12">
+                        <form name="generateStatement" ng-submit="generateStatement.$valid && genStatement(start_date, end_date)">
 
-                        </div>
+                            <div class="col-lg-6">
+                                <h4>Generate a custom statement</h4>
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="dd.MM.yyyy"
+                                           ng-model="start_date"
+                                           is-open="start_opened"
+                                           datepicker-options="datepicker.options"
+                                           ng-required="true" close-text="Close"/>
+                                  <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="start_open($event)"><i
+                                            class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="input-group">
+                                    <input type="text" class="form-control" datepicker-popup="dd.MM.yyyy"
+                                           ng-model="end_date"
+                                           is-open="end_opened"
+                                           datepicker-options="datepicker.options"
+                                           ng-required="true" close-text="Close"/>
+                                  <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default" ng-click="end_open($event)"><i
+                                            class="glyphicon glyphicon-calendar"></i></button>
+                                  </span>
+                                </p>
+                            </div>
+                            <button type="submit">Generate statement</button>
+                        </form>
                     </div>
                 </div>
             </div>

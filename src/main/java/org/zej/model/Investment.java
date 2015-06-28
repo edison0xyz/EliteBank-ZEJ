@@ -24,6 +24,9 @@ public class Investment implements Serializable {
 	@Column
 	private String Description;
 
+	@Column
+	private float value;
+
 	public Long getId() {
 		return this.id;
 	}
@@ -81,6 +84,14 @@ public class Investment implements Serializable {
 		this.Description = Description;
 	}
 
+	public float getValue() {
+		return value;
+	}
+
+	public void setValue(float value) {
+		this.value = value;
+	}
+
 	@Override
 	public String toString() {
 		String result = getClass().getSimpleName() + " ";
@@ -88,6 +99,7 @@ public class Investment implements Serializable {
 			result += "type: " + type;
 		if (Description != null && !Description.trim().isEmpty())
 			result += ", Description: " + Description;
+		result += ", value: " + value;
 		return result;
 	}
 }

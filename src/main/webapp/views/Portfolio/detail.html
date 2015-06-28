@@ -1,19 +1,22 @@
-<header ng-switch on="$location.path().indexOf('/Portfolios/new') > -1">
-    <h3 ng-switch-when="true">Create a new Portfolio</h3>
-    <h3 ng-switch-when="false">View or edit Portfolio</h3>
-</header>
-<form id="PortfolioForm" name="PortfolioForm" class="form-horizontal" role="form">
-    <div ng-show="displayError" class="alert alert-danger">
-        <strong>Error!</strong> Something broke. Retry, or cancel and start afresh.
-    </div>
-    
-
-
-    <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-            <button id="savePortfolio" name="savePortfolio" class="btn btn-primary" ng-disabled="isClean() || PortfolioForm.$invalid" ng-click="save()"><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
-            <button id="cancel" name="cancel" class="btn btn-default" ng-click="cancel()"><span class="glyphicon glyphicon-remove-sign"></span> Cancel</button>
-            <button id="deletePortfolio" name="deletePortfolio" class="btn btn-danger" ng-show="portfolio.id" ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> Delete</button>
+<div ng-include="'views/navbar/navbar.html'"></div>
+<div class="container">
+    <form id="PortfolioForm" name="PortfolioForm" class="form-horizontal" role="form">
+        <div ng-show="displayError" class="alert alert-danger">
+            <strong>Error!</strong> Something broke. Retry, or cancel and start afresh.
         </div>
-    </div>
-</form>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button id="savePortfolio" name="savePortfolio" class="btn btn-primary"
+                        ng-disabled="isClean() || PortfolioForm.$invalid" ng-click="save()"><span
+                        class="glyphicon glyphicon-ok-sign"></span> Save
+                </button>
+                <button id="cancel" name="cancel" class="btn btn-default" ng-click="cancel()"><span
+                        class="glyphicon glyphicon-remove-sign"></span> Cancel
+                </button>
+                <button id="deletePortfolio" name="deletePortfolio" class="btn btn-danger" ng-show="portfolio.id"
+                        ng-click="remove()"><span class="glyphicon glyphicon-trash"></span> Delete
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

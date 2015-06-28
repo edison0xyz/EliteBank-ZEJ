@@ -24,6 +24,9 @@ public class Portfolio implements Serializable {
 	@Column
 	private ArrayList investments;
 
+	@Column
+	private float netValue;
+
 	public Long getId() {
 		return this.id;
 	}
@@ -71,5 +74,20 @@ public class Portfolio implements Serializable {
 
 	public void setInvestments(ArrayList investments) {
 		this.investments = investments;
+	}
+
+	public float getNetValue() {
+		return netValue;
+	}
+
+	public void setNetValue(float netValue) {
+		this.netValue = netValue;
+	}
+
+	@Override
+	public String toString() {
+		String result = getClass().getSimpleName() + " ";
+		result += "netValue: " + netValue;
+		return result;
 	}
 }

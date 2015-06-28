@@ -8,13 +8,18 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-md-6">
                             <div class="input-group">
+                                Select Portfolio:
                                 <select ng-model="portfolio"
                                         ng-change="updatePortfolio()"
                                         ng-options="port as port.title for port in portfolios">
                                 </select>
-                                as of {{ date | date:'EEE, dd MMM YY HH:mm:ss Z'}}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class='pull-right' ng-controller="ClockController">
+                                <p>{{ clock  | date:'medium'}}</p>
                             </div>
                         </div>
                     </div>

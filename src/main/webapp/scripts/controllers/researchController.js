@@ -131,7 +131,7 @@ angular.module('eletrial').controller('ResearchController', function ($scope, St
                     //enabled: false
                 },
                 chart: {
-                    width: actualWidth
+                    width: null
                 },
                 yAxis: [{
                     labels: {
