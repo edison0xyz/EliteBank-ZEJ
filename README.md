@@ -1,7 +1,6 @@
-# EliteBank-ZEJ
+# Elite Bank iBanking Platform
 UBS Case Challenge
-
-## Elite Bank iBanking Platform
+Demo: http://ebank-ubscase.rhcloud.com/
 
 Features:
 * Portfolio summary
