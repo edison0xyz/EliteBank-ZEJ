@@ -1,9 +1,9 @@
 # Elite Bank iBanking Platform
-UBS Case Challenge
+Team ZEJ's submission for UBS Case Challenge 2015
 
 ##Demo: 
-http://ebank-ubscase.rhcloud.com/
-*No username and password is required
+http://ebank-ubscase.rhcloud.com/ <br>
+No username and password is required
 
 Application submitted for UBS Case Challenge 2015. 
 
