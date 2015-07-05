@@ -1,14 +1,15 @@
 # Elite Bank iBanking Platform
 UBS Case Challenge
+
 Demo: http://ebank-ubscase.rhcloud.com/
+(No username and password required)
 
 Application submitted for UBS Case Challenge. 
+
 Members (Expected Year of Graduation: 2016/2017): 
 * Edison LIM Jun Hao (edison.lim.2013@sis.smu.edu.sg)
 * Fu Jiacheng (jiacheng.fu.2013@sis.smu.edu.sg)
 * Ler Ze Chen, Zac (zechen.ler.2013@sis.smu.edu.sg)
-
-
 
 Features:
 * Portfolio summary
